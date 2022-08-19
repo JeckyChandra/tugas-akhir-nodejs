@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
+var cors = require('cors');
+
+
 
 mongoose.Promise = global.Promise;
 
@@ -17,6 +20,8 @@ mongoose.connect(dbConfig.url, {
 
 //membuat express app
 const app = express();
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true}))
 
