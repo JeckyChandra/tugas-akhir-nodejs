@@ -67,7 +67,7 @@ exports.update = (req, res) => {
     req.params.noteId,
     {
       title: req.body.title || "Tanpa judul",
-      conrent: req.body.content,
+      content: req.body.content,
     },
     { new: true }
   )
